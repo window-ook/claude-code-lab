@@ -1,0 +1,46 @@
+# Dependencies
+node_modules/
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# IDE
+.vscode/settings.json
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+logs/
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# Build outputs
+dist/
+build/
+*.js.map
+
+# Temporary files
+tmp/
+temp/
+*.tmp
+
+# Personal notes (if you want to keep some notes private)
+# private/
+# scratch/
+
+# Secrets and credentials
+secrets/
+*.key
+*.pem
+credentials.json
