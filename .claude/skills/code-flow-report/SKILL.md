@@ -4,11 +4,22 @@ description: 웹 애플리케이션의 소스 코드를 분석하고, 런타임 
 tags: [analyze, flow, report]
 ---
 
-# Skill purpose
+# 🎯 Skill 목적
 
 This Skill analyzes a web application's source code (front-end + back-end), extracts structural and data-flow information, and produces a standalone interactive HTML report. The report includes: a navigable flow diagram (routes → controllers → services → database), expandable code previews, tooltips, and a plain-language summary targeted to beginners.
 
-# Step-by-step instructions (what must do)
+## 🔑 활성화 조건
+
+### 활성화 키워드
+
+- "코드 시각화"
+- "소스 코드 시각화"
+- "코드 분석"
+- "코드 플로우"
+- "프로젝트 플로우"
+- "프로젝트 분석"
+
+## 📋 워크플로우
 
 1. Validate inputs
 
@@ -58,7 +69,7 @@ This Skill analyzes a web application's source code (front-end + back-end), extr
    - If analysis is incomplete (dynamic route registration, runtime reflection, heavy metaprogramming), clearly annotate nodes/edges as "inferred" or "unknown" and list files/methods that need manual review.
    - Warn about unsupported or partially supported frameworks and ask the user for guidance (entry points, route maps).
 
-# Implementation notes Claude should follow when producing the report
+## Implementation notes Claude should follow when producing the report
 
 - Prefer static analysis; where static analysis cannot resolve call edges, mark them as "inferred" and provide the best-effort explanation.
 - Support multiple languages but prioritize JavaScript/TypeScript (Node/Express/Next/React), Python (Flask/Django/FastAPI), and common patterns for database access. If other languages are present, attempt generic parsing by file extensions and symbol scanning.
@@ -66,7 +77,7 @@ This Skill analyzes a web application's source code (front-end + back-end), extr
 - Keep the beginner summary concise and avoid technical jargon; include a short glossary for unavoidable terms.
 - Ensure the generated HTML and assets are static (no server required to view) and performant for medium-sized codebases (~1000 files).
 
-# Usage examples
+## Usage examples
 
 Example 1: Basic prompt to start analysis
 
@@ -80,7 +91,7 @@ Example 3: Limited language guidance
 
 - "Repo contains Node/Express backend and React frontend. I want routes and controller flows highlighted; skip third-party node_modules."
 
-# Best practices
+## Best practices
 
 - Provide the repo root or a zip of the project to get the most accurate results.
 - Tell the Skill the primary language/framework(s) and entry points if the repo uses dynamic registration or uncommon project structure.
@@ -88,13 +99,13 @@ Example 3: Limited language guidance
 - Use the granularity toggle to get a high-level overview first, then regenerate with more detail when focusing on specific features.
 - Review "inferred" edges manually; they indicate where static analysis could not prove a connection.
 
-# When to ask clarifying questions
+## When to ask clarifying questions
 
 - If no entry point or route files are found, ask the user to provide them.
 - If multiple frameworks are present or dynamic routing is used, request guidance about which subsystem to prioritize.
 - If the repo is private or contains sensitive data, remind the user not to share secrets and offer to run the analysis locally with an exported archive.
 
-# Related scripts and files
+## Related scripts and files
 
 - The Skill can optionally produce helper scripts in the report directory:
   - scripts/analyze.sh — example command to run a local analyzer (placeholder)
