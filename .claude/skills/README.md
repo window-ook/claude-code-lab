@@ -9,6 +9,7 @@
 | [code-flow-report](#code-flow-report) | 코드 플로우 시각화 리포트 생성 | `/code-flow-report` |
 | [idea-plan](#idea-plan)               | 아이디어 기획서 작성           | `/idea-plan`        |
 | [prd](#prd)                           | 제품 요구사항 정의서(PRD) 작성 | `/prd`              |
+| [nextjs-16](#nextjs-16)               | Next.js 16 공식 문서 컨텍스트  | `/nextjs-16`        |
 
 ## 🪄 code-flow-report
 
@@ -64,4 +65,47 @@
 ```
 "/prd"
 "PRD 문서를 작성해줘"
+```
+
+## 🪄 nextjs-16
+
+Next.js 16 App Router 개발을 위한 **공식 문서 기반 레퍼런스 가이드**입니다. 최신 패턴과 베스트 프랙티스를 제공합니다.
+
+### 주요 내용
+
+- **params Promise 패턴**: Next.js 16에서 params는 Promise로 처리
+- **PageProps/LayoutProps 헬퍼**: 타입 안전한 페이지/레이아웃 props
+- **useActionState**: useFormState 대신 사용하는 새로운 Hook
+- **'use cache' 디렉티브**: Cache Components를 위한 캐싱 패턴
+- **Server Components / Client Components**: 서버/클라이언트 컴포넌트 구분
+- **Proxy 패턴**: 외부 API 프록시 설정
+
+### 레퍼런스 문서 목록
+
+| 번호 | 주제                      |
+| ---- | ------------------------- |
+| 01   | Project Structure         |
+| 02   | Layouts and Pages         |
+| 03   | Linking and Navigating    |
+| 04   | Server and Client Components |
+| 05   | Cache Components          |
+| 06   | Fetching Data             |
+| 07   | Updating Data             |
+| 08   | Caching and Revalidating  |
+| 09   | Error Handling            |
+| 10   | CSS                       |
+| 11   | Image Optimization        |
+| 12   | Font Optimization         |
+| 13   | Metadata and OG Images    |
+| 14   | Route Handlers            |
+| 15   | Proxy                     |
+| 16   | Deploying                 |
+| 17   | Upgrading                 |
+
+### 사용 예시
+
+```
+"/nextjs-16"
+"Next.js 16 패턴으로 페이지를 만들어줘"
+"App Router로 동적 라우트를 구현해줘"
 ```
