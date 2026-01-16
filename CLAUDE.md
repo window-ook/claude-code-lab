@@ -102,7 +102,7 @@ const INTERNAL_PATHS = {
 } as const;
 
 const EXTERNAL_PATHS = {
-  USER_MANUAL: 'https://velog.io/@windowook/cafe-masters',
+  USER_MANUAL: 'https://velog.io/@window-ook/cafe-masters',
   // ...
 } as const;
 ```

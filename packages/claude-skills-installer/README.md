@@ -1,6 +1,6 @@
 # Claude-Code-Lab Skills Installer
 
-Claude Code Lab 스킬을 단일로 설치하는 CLI 도구입니다. (by windowook)
+Claude Code Lab 스킬을 단일로 설치하는 CLI 도구입니다. (by window-ook)
 
 ## 📖 사용법
 

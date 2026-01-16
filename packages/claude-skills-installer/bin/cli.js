@@ -26,7 +26,7 @@ function getAvailableSkills() {
   return fs.readdirSync(SKILLS_DIR).filter(name => {
     const skillPath = path.join(SKILLS_DIR, name);
     return fs.statSync(skillPath).isDirectory() &&
-           fs.existsSync(path.join(skillPath, 'SKILL.md'));
+      fs.existsSync(path.join(skillPath, 'SKILL.md'));
   });
 }
 
@@ -74,7 +74,7 @@ function listSkills() {
   const skills = getAvailableSkills();
 
   log('\n┌───────────────────────────────────────────────────────────┐', COLORS.cyan);
-  log('│       Claude-Code-Lab Skills Installer (by windowook)   │', COLORS.cyan);
+  log('│       Claude-Code-Lab Skills Installer (by window-ook)   │', COLORS.cyan);
   log('└───────────────────────────────────────────────────────────┘', COLORS.cyan);
 
   if (skills.length === 0) {
@@ -100,7 +100,7 @@ function listSkills() {
 
 function showHelp() {
   log('\n┌───────────────────────────────────────────────────────────┐', COLORS.cyan);
-  log('│       Claude-Code-Lab Skills Installer (by windowook)   │', COLORS.cyan);
+  log('│       Claude-Code-Lab Skills Installer (by window-ook)   │', COLORS.cyan);
   log('└───────────────────────────────────────────────────────────┘', COLORS.cyan);
 
   log('\n  사용법:', COLORS.bright);

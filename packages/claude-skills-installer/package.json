@@ -1,7 +1,7 @@
 {
   "name": "claude-code-lab",
   "version": "1.0.0",
-  "description": "Claude Code Lab 스킬을 단일로 설치하는 CLI 도구 (by windowook)",
+  "description": "Claude Code Lab 스킬을 단일로 설치하는 CLI 도구 (by window-ook)",
   "bin": {
     "claude-code-lab": "./bin/cli.js"
   },
@@ -12,11 +12,11 @@
     "ai",
     "cli"
   ],
-  "author": "woogy",
+  "author": "window-ook",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/woogy/claude-code-lab"
+    "url": "https://github.com/window-ook/claude-code-lab"
   },
   "files": [
     "bin",
