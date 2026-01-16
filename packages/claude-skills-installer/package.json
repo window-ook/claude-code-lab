@@ -1,6 +1,6 @@
 {
   "name": "claude-code-lab",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Claude Code Lab 스킬을 단일로 설치하는 CLI 도구 (by window-ook)",
   "bin": {
     "claude-code-lab": "./bin/cli.js"
