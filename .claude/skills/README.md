@@ -4,12 +4,13 @@
 
 ## 📚 스킬 목록
 
-| 스킬                                  | 설명                           | 활성화 명령어       |
-| ------------------------------------- | ------------------------------ | ------------------- |
-| [code-flow-report](#code-flow-report) | 코드 플로우 시각화 리포트 생성 | `/code-flow-report` |
-| [idea-plan](#idea-plan)               | 아이디어 기획서 작성           | `/idea-plan`        |
-| [prd](#prd)                           | 제품 요구사항 정의서(PRD) 작성 | `/prd`              |
-| [nextjs-16](#nextjs-16)               | Next.js 16 공식 문서 컨텍스트  | `/nextjs-16`        |
+| 스킬                                  | 설명                                   | 활성화 명령어       |
+| ------------------------------------- | -------------------------------------- | ------------------- |
+| [code-flow-report](#code-flow-report) | 코드 플로우 시각화 리포트 생성         | `/code-flow-report` |
+| [idea-plan](#idea-plan)               | 아이디어 기획서 작성                   | `/idea-plan`        |
+| [prd](#prd)                           | 제품 요구사항 정의서(PRD) 작성         | `/prd`              |
+| [nextjs-16](#nextjs-16)               | Next.js 16 공식 문서 컨텍스트          | `/nextjs-16`        |
+| [clean-tailwind](#clean-tailwind)     | Tailwind CSS를 컨벤션에 따라 순서 개선 | `/clean-tailwind`   |
 
 ## 🪄 code-flow-report
 
@@ -82,25 +83,25 @@ Next.js 16 App Router 개발을 위한 **공식 문서 기반 레퍼런스 가�
 
 ### 레퍼런스 문서 목록
 
-| 번호 | 주제                      |
-| ---- | ------------------------- |
-| 01   | Project Structure         |
-| 02   | Layouts and Pages         |
-| 03   | Linking and Navigating    |
+| 번호 | 주제                         |
+| ---- | ---------------------------- |
+| 01   | Project Structure            |
+| 02   | Layouts and Pages            |
+| 03   | Linking and Navigating       |
 | 04   | Server and Client Components |
-| 05   | Cache Components          |
-| 06   | Fetching Data             |
-| 07   | Updating Data             |
-| 08   | Caching and Revalidating  |
-| 09   | Error Handling            |
-| 10   | CSS                       |
-| 11   | Image Optimization        |
-| 12   | Font Optimization         |
-| 13   | Metadata and OG Images    |
-| 14   | Route Handlers            |
-| 15   | Proxy                     |
-| 16   | Deploying                 |
-| 17   | Upgrading                 |
+| 05   | Cache Components             |
+| 06   | Fetching Data                |
+| 07   | Updating Data                |
+| 08   | Caching and Revalidating     |
+| 09   | Error Handling               |
+| 10   | CSS                          |
+| 11   | Image Optimization           |
+| 12   | Font Optimization            |
+| 13   | Metadata and OG Images       |
+| 14   | Route Handlers               |
+| 15   | Proxy                        |
+| 16   | Deploying                    |
+| 17   | Upgrading                    |
 
 ### 사용 예시
 
@@ -108,4 +109,37 @@ Next.js 16 App Router 개발을 위한 **공식 문서 기반 레퍼런스 가�
 "/nextjs-16"
 "Next.js 16 패턴으로 페이지를 만들어줘"
 "App Router로 동적 라우트를 구현해줘"
+```
+
+## 🪄 clean-tailwind
+
+Tailwind CSS 클래스를 일관된 순서로 정렬하는 리팩토링 스킬입니다. **핵심 원칙**: 시각적 렌더링 순서(바깥→안쪽→콘텐츠)를 따릅니다.
+
+### 정렬 순서
+
+| 순위 | 카테고리   | 속성 예시                                       |
+| ---- | ---------- | ----------------------------------------------- |
+| 0    | 커스텀 CSS | `card-tilt`, `hover-button` (맨 앞)             |
+| 1    | 포지션     | `absolute`, `relative`, `fixed`, `top-*`        |
+| 2    | 레이아웃   | `w-*`, `h-*`, `size-*`, `min-w-*`, `overflow-*` |
+| 3    | 공백       | `m-*`, `mx-*`, `p-*`, `px-*`, `py-*`            |
+| 4    | 외곽 효과  | `border-*`, `rounded-*`, `shadow-*`             |
+| 5    | 배경색     | `bg-*`, `opacity-*`                             |
+| 6    | Flex/Grid  | `flex`, `grid`, `gap-*`, `justify-*`, `items-*` |
+| 7    | 폰트       | `text-*`, `font-*`, `leading-*`                 |
+| 8    | 애니메이션 | `animate-*`                                     |
+| 9    | 트랜지션   | `transition-*`, `duration-*`, `ease-*`          |
+
+### 주요 규칙
+
+- **조건부 클래스 배치**: `hover:`, `focus:` 등은 해당 기본 클래스 바로 뒤에 위치
+- **크기 통합**: `w-8 h-8` → `size-8`로 통합
+- **동적 클래스**: 정적 부분만 정렬하고 동적 부분은 원래 위치 유지
+
+### 사용 예시
+
+```
+"/clean-tailwind"
+"이 컴포넌트의 Tailwind 클래스 순서를 정리해줘"
+"className 정렬 컨벤션을 적용해줘"
 ```
