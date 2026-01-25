@@ -11,6 +11,7 @@
 | [prd](#prd)                           | 제품 요구사항 정의서(PRD) 작성         | `/prd`              |
 | [nextjs-16](#nextjs-16)               | Next.js 16 공식 문서 컨텍스트          | `/nextjs-16`        |
 | [clean-tailwind](#clean-tailwind)     | Tailwind CSS를 컨벤션에 따라 순서 개선 | `/clean-tailwind`   |
+| [playwright-pom](#playwright-pom)     | Playwright E2E 테스트 POM 패턴 가이드  | `/playwright-pom`   |
 
 ## 🪄 code-flow-report
 
@@ -142,4 +143,36 @@ Tailwind CSS 클래스를 일관된 순서로 정렬하는 리팩토링 스킬�
 "/clean-tailwind"
 "이 컴포넌트의 Tailwind 클래스 순서를 정리해줘"
 "className 정렬 컨벤션을 적용해줘"
+```
+
+## 🪄 playwright-pom
+
+Playwright E2E 테스트를 위한 **Page Object Model(POM) 패턴 가이드**입니다. 선택자와 비즈니스 로직을 분리하여 유지보수성과 재사용성을 극대화합니다.
+
+### 디렉토리 구조
+
+```
+tests/e2e/
+├── page-objects/           # POM 클래스들
+│   ├── SignInPage.ts
+│   └── MainPage.ts
+├── utils/
+│   ├── constants.ts        # 상수 (선택자, 목 데이터)
+│   └── helpers.ts          # 공유 헬퍼 함수
+└── core-flow/              # 테스트 스펙 파일들
+```
+
+### 주요 규칙
+
+- **Locator 선언**: `readonly` 속성으로 생성자에서 초기화
+- **메서드 네이밍**: `goto`, `fill`, `click`, `select`, `mock`, `ensure`, `wait` 접두사 사용
+- **API 모킹**: CRUD 통합 메서드로 구현 (`mockCollectionAPI()`)
+- **상수 관리**: 선택자/모킹 데이터는 `constants.ts`에서 중앙 관리
+
+### 사용 예시
+
+```
+"/playwright-pom"
+"E2E 테스트를 POM 패턴으로 작성해줘"
+"Page Object 클래스를 만들어줘"
 ```
