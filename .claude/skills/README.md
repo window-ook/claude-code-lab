@@ -12,6 +12,7 @@
 | [nextjs-16](#nextjs-16)               | Next.js 16 공식 문서 컨텍스트          | `/nextjs-16`        |
 | [clean-tailwind](#clean-tailwind)     | Tailwind CSS를 컨벤션에 따라 순서 개선 | `/clean-tailwind`   |
 | [playwright-pom](#playwright-pom)     | Playwright E2E 테스트 POM 패턴 가이드  | `/playwright-pom`   |
+| [tanstack-query](#tanstack-query)     | TanStack Query 공식 문서 컨텍스트      | `/tanstack-query`   |
 
 ## 🪄 code-flow-report
 
@@ -175,4 +176,82 @@ tests/e2e/
 "/playwright-pom"
 "E2E 테스트를 POM 패턴으로 작성해줘"
 "Page Object 클래스를 만들어줘"
+```
+
+## 🪄 tanstack-query
+
+TanStack Query(React Query) v5 기반 **베스트 프랙티스 및 공식 문서 레퍼런스 가이드**입니다. 선언형 데이터 페칭, 캐시 관리, SSR Prefetch 패턴을 제공합니다.
+
+### 주요 내용
+
+- **Hook Selection Guide**: 상황별 훅 선택 의사결정 테이블
+- **useSuspenseQuery**: 선언형 데이터 페칭 (Suspense + ErrorBoundary)
+- **Query Key Factory**: 도메인별 쿼리키 중앙 관리 패턴
+- **Cache Invalidation**: `onSettled` 기반 뮤테이션 후 캐시 무효화
+- **SSR Prefetch**: `prefetchQuery` → `HydrationBoundary` 패턴
+- **v5 Breaking Changes**: `onSuccess` deprecated, `cacheTime` → `gcTime` 등
+
+### 스킬 구조
+
+```
+tanstack-query/
+├── SKILL.md              # 훅 선택 가이드, 디렉토리 구조, v5 변경사항
+├── PRINCIPLES.md         # 규칙 (네이밍, 조건부 실행, 캐시 무효화)
+├── PRACTICES.md          # 코드 패턴 (Provider, Suspense, Prefetch, Mutation)
+└── references/
+    ├── api-reference/    # API 레퍼런스 (31개)
+    └── guides-and-concepts/  # 가이드 & 개념 (34개)
+```
+
+### 레퍼런스 문서 목록
+
+**Guides & Concepts (34)**
+
+| 번호 | 주제                          | 번호 | 주제                        |
+| ---- | ----------------------------- | ---- | --------------------------- |
+| 01   | Important Defaults            | 18   | Query Invalidation          |
+| 02   | Queries                       | 19   | Invalidations from Mutations|
+| 03   | Query Keys                    | 20   | Updates from Mutation Responses |
+| 04   | Query Functions               | 21   | Optimistic Updates          |
+| 05   | Query Options                 | 22   | Query Cancellation          |
+| 06   | Network Mode                  | 23   | Scroll Restoration          |
+| 07   | Parallel Queries              | 24   | Filters                     |
+| 08   | Dependent Queries             | 25   | Performance Request Waterfalls |
+| 09   | Background Fetching Indicators| 26   | Prefetching Router Integration |
+| 10   | Window Focus Refetching       | 27   | Server Rendering Hydration  |
+| 11   | Disabling Queries             | 28   | Advanced Server Rendering   |
+| 12   | Query Retries                 | 29   | Caching Examples            |
+| 13   | Paginated Queries             | 30   | Render Optimizations        |
+| 14   | Infinite Queries              | 31   | Default Query Function      |
+| 15   | Initial Query Data            | 32   | Suspense                    |
+| 16   | Placeholder Query Data        | 33   | Testing                     |
+| 17   | Mutations                     | 34   | Possibility Replace         |
+
+**API Reference (31)**
+
+| 번호 | 주제                          | 번호 | 주제                        |
+| ---- | ----------------------------- | ---- | --------------------------- |
+| 01   | QueryClient                   | 17   | useIsMutating               |
+| 02   | QueryCache                    | 18   | useMutationState            |
+| 03   | MutationCache                 | 19   | useSuspenseQuery            |
+| 04   | QueryObserver                 | 20   | useSuspenseInfiniteQuery    |
+| 05   | InfiniteQueryObserver         | 21   | useSuspenseQueries          |
+| 06   | QueriesObserver               | 22   | QueryClientProvider         |
+| 07   | StreamedQuery                 | 23   | useQueryClient              |
+| 08   | FocusManager                  | 24   | queryOptions                |
+| 09   | OnlineManager                 | 25   | infiniteQueryOptions        |
+| 10   | NotifyManager                 | 26   | mutationOptions             |
+| 11   | TimeoutManager                | 27   | usePrefetchQuery            |
+| 12   | useQuery                      | 28   | usePrefetchInfiniteQuery    |
+| 13   | useQueries                    | 29   | QueryErrorResetBoundary     |
+| 14   | useInfiniteQuery              | 30   | useQueryErrorResetBoundary  |
+| 15   | useMutation                   | 31   | Hydration                   |
+| 16   | useIsFetching                 |      |                             |
+
+### 사용 예시
+
+```
+"/tanstack-query"
+"TanStack Query로 데이터 페칭 훅을 만들어줘"
+"useSuspenseQuery + Prefetch 패턴으로 SSR 페이지를 구현해줘"
 ```
