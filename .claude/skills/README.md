@@ -4,15 +4,16 @@
 
 ## 📚 스킬 목록
 
-| 스킬                                  | 설명                                   | 활성화 명령어       |
-| ------------------------------------- | -------------------------------------- | ------------------- |
-| [code-flow-report](#code-flow-report) | 코드 플로우 시각화 리포트 생성         | `/code-flow-report` |
-| [idea-plan](#idea-plan)               | 아이디어 기획서 작성                   | `/idea-plan`        |
-| [prd](#prd)                           | 제품 요구사항 정의서(PRD) 작성         | `/prd`              |
-| [nextjs-16](#nextjs-16)               | Next.js 16 공식 문서 컨텍스트          | `/nextjs-16`        |
-| [clean-tailwind](#clean-tailwind)     | Tailwind CSS를 컨벤션에 따라 순서 개선 | `/clean-tailwind`   |
-| [playwright-pom](#playwright-pom)     | Playwright E2E 테스트 POM 패턴 가이드  | `/playwright-pom`   |
-| [tanstack-query](#tanstack-query)     | TanStack Query 공식 문서 컨텍스트      | `/tanstack-query`   |
+| 스킬                                  | 설명                                  | 활성화 명령어       |
+| ------------------------------------- | ------------------------------------- | ------------------- |
+| [code-flow-report](#code-flow-report) | 코드 플로우 시각화 리포트 생성        | `/code-flow-report` |
+| [idea-plan](#idea-plan)               | 아이디어 기획서 작성                  | `/idea-plan`        |
+| [prd](#prd)                           | 제품 요구사항 정의서(PRD) 작성        | `/prd`              |
+| [clean-tailwind](#clean-tailwind)     | Tailwind 프로퍼티를 순서에 따라 정렬  | `/clean-tailwind`   |
+| [playwright-pom](#playwright-pom)     | Playwright E2E 테스트 POM 패턴 가이드 | `/playwright-pom`   |
+| [nextjs-16](#nextjs-16)               | Next.js 16 공식 문서 컨텍스트         | `/nextjs-16`        |
+| [tailwind-css](#tailwind-css)         | Tailwind CSS 공식 문서 컨텍스트       | `/tailwind-css`     |
+| [tanstack-query](#tanstack-query)     | TanStack Query 공식 문서 컨텍스트     | `/tanstack-query`   |
 
 ## 🪄 code-flow-report
 
@@ -68,49 +69,6 @@
 ```
 "/prd"
 "PRD 문서를 작성해줘"
-```
-
-## 🪄 nextjs-16
-
-Next.js 16 App Router 개발을 위한 **공식 문서 기반 레퍼런스 가이드**입니다. 최신 패턴과 베스트 프랙티스를 제공합니다.
-
-### 주요 내용
-
-- **params Promise 패턴**: Next.js 16에서 params는 Promise로 처리
-- **PageProps/LayoutProps 헬퍼**: 타입 안전한 페이지/레이아웃 props
-- **useActionState**: useFormState 대신 사용하는 새로운 Hook
-- **'use cache' 디렉티브**: Cache Components를 위한 캐싱 패턴
-- **Server Components / Client Components**: 서버/클라이언트 컴포넌트 구분
-- **Proxy 패턴**: 외부 API 프록시 설정
-
-### 레퍼런스 문서 목록
-
-| 번호 | 주제                         |
-| ---- | ---------------------------- |
-| 01   | Project Structure            |
-| 02   | Layouts and Pages            |
-| 03   | Linking and Navigating       |
-| 04   | Server and Client Components |
-| 05   | Cache Components             |
-| 06   | Fetching Data                |
-| 07   | Updating Data                |
-| 08   | Caching and Revalidating     |
-| 09   | Error Handling               |
-| 10   | CSS                          |
-| 11   | Image Optimization           |
-| 12   | Font Optimization            |
-| 13   | Metadata and OG Images       |
-| 14   | Route Handlers               |
-| 15   | Proxy                        |
-| 16   | Deploying                    |
-| 17   | Upgrading                    |
-
-### 사용 예시
-
-```
-"/nextjs-16"
-"Next.js 16 패턴으로 페이지를 만들어줘"
-"App Router로 동적 라우트를 구현해줘"
 ```
 
 ## 🪄 clean-tailwind
@@ -178,7 +136,108 @@ tests/e2e/
 "Page Object 클래스를 만들어줘"
 ```
 
+## 🪄 nextjs-16
+
+**[🧙🏻‍♂️ 에이전트가 자율적 실행 가능]**
+
+Next.js 16 App Router 개발을 위한 **공식 문서 기반 레퍼런스 가이드**입니다. 최신 패턴과 베스트 프랙티스를 제공합니다.
+
+### 주요 내용
+
+- **params Promise 패턴**: Next.js 16에서 params는 Promise로 처리
+- **PageProps/LayoutProps 헬퍼**: 타입 안전한 페이지/레이아웃 props
+- **useActionState**: useFormState 대신 사용하는 새로운 Hook
+- **'use cache' 디렉티브**: Cache Components를 위한 캐싱 패턴
+- **Server Components / Client Components**: 서버/클라이언트 컴포넌트 구분
+- **Proxy 패턴**: 외부 API 프록시 설정
+
+### 레퍼런스 문서 목록
+
+| 번호 | 주제                         |
+| ---- | ---------------------------- |
+| 01   | Project Structure            |
+| 02   | Layouts and Pages            |
+| 03   | Linking and Navigating       |
+| 04   | Server and Client Components |
+| 05   | Cache Components             |
+| 06   | Fetching Data                |
+| 07   | Updating Data                |
+| 08   | Caching and Revalidating     |
+| 09   | Error Handling               |
+| 10   | CSS                          |
+| 11   | Image Optimization           |
+| 12   | Font Optimization            |
+| 13   | Metadata and OG Images       |
+| 14   | Route Handlers               |
+| 15   | Proxy                        |
+| 16   | Deploying                    |
+| 17   | Upgrading                    |
+
+### 사용 예시
+
+```
+"/nextjs-16"
+"Next.js 16 패턴으로 페이지를 만들어줘"
+"App Router로 동적 라우트를 구현해줘"
+```
+
+## 🪄 tailwind-css
+
+**[🧙🏻‍♂️ 에이전트가 자율적 실행 가능]**
+
+Tailwind CSS v4 기반 **베스트 프랙티스 및 공식 문서 레퍼런스 가이드**입니다. 유틸리티 퍼스트 스타일링, 테마 커스터마이징, 반응형 디자인 패턴을 제공합니다.
+
+### 주요 내용
+
+- **className Order Priority**: 포지션 → 레이아웃 → 공백 → 외곽 → 배경 → Flex/Grid → 폰트 → 애니메이션 → 트랜지션
+- **v4 Breaking Changes**: `tailwind.config.js` → `@theme` 디렉티브, 자동 클래스 감지
+- **Dynamic Class Names**: 완전한 클래스명 매핑 패턴 (문자열 보간 금지)
+- **Theme Customization**: `@theme` 디렉티브로 디자인 토큰 정의
+- **Responsive Design**: 모바일 퍼스트, 컨테이너 쿼리
+- **Dark Mode**: `dark:` 변형, 시스템 설정 vs 수동 토글
+
+### 스킬 구조
+
+```
+tailwind-css/
+├── SKILL.md              # className 순서, v4 변경사항, 필수 패턴
+└── references/
+    ├── 01-styling-with-utility-classes.md
+    ├── 02-hover-focus-and-other-states.md
+    ├── 03-responsive-design.md
+    ├── 04-dark-mode.md
+    ├── 05-theme-variables.md
+    ├── 06-colors.md
+    ├── 07-adding-custom-styles.md
+    ├── 08-detecting-classes-in-source-files.md
+    └── 09-functions-and-directives.md
+```
+
+### 레퍼런스 문서 목록
+
+| 번호 | 주제                              | 설명                                 |
+| ---- | --------------------------------- | ------------------------------------ |
+| 01   | Styling with Utility Classes      | 유틸리티 퍼스트 워크플로우, 레이아웃 |
+| 02   | Hover, Focus and Other States     | 의사 클래스/요소, ARIA 상태          |
+| 03   | Responsive Design                 | 브레이크포인트, 컨테이너 쿼리        |
+| 04   | Dark Mode                         | dark: 변형, 시스템/수동 토글         |
+| 05   | Theme Variables                   | @theme 디렉티브, 디자인 토큰         |
+| 06   | Colors                            | 색상 팔레트, 투명도, currentColor    |
+| 07   | Adding Custom Styles              | 임의값, @layer, @utility, @apply     |
+| 08   | Detecting Classes in Source Files | 자동 감지, @source, 세이프리스트     |
+| 09   | Functions and Directives          | @import, @theme, @variant, CSS 함수  |
+
+### 사용 예시
+
+```
+"/tailwind-css"
+"Tailwind CSS로 반응형 카드 컴포넌트를 만들어줘"
+"다크 모드를 지원하는 버튼 스타일을 작성해줘"
+```
+
 ## 🪄 tanstack-query
+
+**[🧙🏻‍♂️ 에이전트가 자율적 실행 가능]**
 
 TanStack Query(React Query) v5 기반 **베스트 프랙티스 및 공식 문서 레퍼런스 가이드**입니다. 선언형 데이터 페칭, 캐시 관리, SSR Prefetch 패턴을 제공합니다.
 
@@ -207,46 +266,46 @@ tanstack-query/
 
 **Guides & Concepts (34)**
 
-| 번호 | 주제                          | 번호 | 주제                        |
-| ---- | ----------------------------- | ---- | --------------------------- |
-| 01   | Important Defaults            | 18   | Query Invalidation          |
-| 02   | Queries                       | 19   | Invalidations from Mutations|
-| 03   | Query Keys                    | 20   | Updates from Mutation Responses |
-| 04   | Query Functions               | 21   | Optimistic Updates          |
-| 05   | Query Options                 | 22   | Query Cancellation          |
-| 06   | Network Mode                  | 23   | Scroll Restoration          |
-| 07   | Parallel Queries              | 24   | Filters                     |
-| 08   | Dependent Queries             | 25   | Performance Request Waterfalls |
-| 09   | Background Fetching Indicators| 26   | Prefetching Router Integration |
-| 10   | Window Focus Refetching       | 27   | Server Rendering Hydration  |
-| 11   | Disabling Queries             | 28   | Advanced Server Rendering   |
-| 12   | Query Retries                 | 29   | Caching Examples            |
-| 13   | Paginated Queries             | 30   | Render Optimizations        |
-| 14   | Infinite Queries              | 31   | Default Query Function      |
-| 15   | Initial Query Data            | 32   | Suspense                    |
-| 16   | Placeholder Query Data        | 33   | Testing                     |
-| 17   | Mutations                     | 34   | Possibility Replace         |
+| 번호 | 주제                           | 번호 | 주제                            |
+| ---- | ------------------------------ | ---- | ------------------------------- |
+| 01   | Important Defaults             | 18   | Query Invalidation              |
+| 02   | Queries                        | 19   | Invalidations from Mutations    |
+| 03   | Query Keys                     | 20   | Updates from Mutation Responses |
+| 04   | Query Functions                | 21   | Optimistic Updates              |
+| 05   | Query Options                  | 22   | Query Cancellation              |
+| 06   | Network Mode                   | 23   | Scroll Restoration              |
+| 07   | Parallel Queries               | 24   | Filters                         |
+| 08   | Dependent Queries              | 25   | Performance Request Waterfalls  |
+| 09   | Background Fetching Indicators | 26   | Prefetching Router Integration  |
+| 10   | Window Focus Refetching        | 27   | Server Rendering Hydration      |
+| 11   | Disabling Queries              | 28   | Advanced Server Rendering       |
+| 12   | Query Retries                  | 29   | Caching Examples                |
+| 13   | Paginated Queries              | 30   | Render Optimizations            |
+| 14   | Infinite Queries               | 31   | Default Query Function          |
+| 15   | Initial Query Data             | 32   | Suspense                        |
+| 16   | Placeholder Query Data         | 33   | Testing                         |
+| 17   | Mutations                      | 34   | Possibility Replace             |
 
 **API Reference (31)**
 
-| 번호 | 주제                          | 번호 | 주제                        |
-| ---- | ----------------------------- | ---- | --------------------------- |
-| 01   | QueryClient                   | 17   | useIsMutating               |
-| 02   | QueryCache                    | 18   | useMutationState            |
-| 03   | MutationCache                 | 19   | useSuspenseQuery            |
-| 04   | QueryObserver                 | 20   | useSuspenseInfiniteQuery    |
-| 05   | InfiniteQueryObserver         | 21   | useSuspenseQueries          |
-| 06   | QueriesObserver               | 22   | QueryClientProvider         |
-| 07   | StreamedQuery                 | 23   | useQueryClient              |
-| 08   | FocusManager                  | 24   | queryOptions                |
-| 09   | OnlineManager                 | 25   | infiniteQueryOptions        |
-| 10   | NotifyManager                 | 26   | mutationOptions             |
-| 11   | TimeoutManager                | 27   | usePrefetchQuery            |
-| 12   | useQuery                      | 28   | usePrefetchInfiniteQuery    |
-| 13   | useQueries                    | 29   | QueryErrorResetBoundary     |
-| 14   | useInfiniteQuery              | 30   | useQueryErrorResetBoundary  |
-| 15   | useMutation                   | 31   | Hydration                   |
-| 16   | useIsFetching                 |      |                             |
+| 번호 | 주제                  | 번호 | 주제                       |
+| ---- | --------------------- | ---- | -------------------------- |
+| 01   | QueryClient           | 17   | useIsMutating              |
+| 02   | QueryCache            | 18   | useMutationState           |
+| 03   | MutationCache         | 19   | useSuspenseQuery           |
+| 04   | QueryObserver         | 20   | useSuspenseInfiniteQuery   |
+| 05   | InfiniteQueryObserver | 21   | useSuspenseQueries         |
+| 06   | QueriesObserver       | 22   | QueryClientProvider        |
+| 07   | StreamedQuery         | 23   | useQueryClient             |
+| 08   | FocusManager          | 24   | queryOptions               |
+| 09   | OnlineManager         | 25   | infiniteQueryOptions       |
+| 10   | NotifyManager         | 26   | mutationOptions            |
+| 11   | TimeoutManager        | 27   | usePrefetchQuery           |
+| 12   | useQuery              | 28   | usePrefetchInfiniteQuery   |
+| 13   | useQueries            | 29   | QueryErrorResetBoundary    |
+| 14   | useInfiniteQuery      | 30   | useQueryErrorResetBoundary |
+| 15   | useMutation           | 31   | Hydration                  |
+| 16   | useIsFetching         |      |                            |
 
 ### 사용 예시
 
@@ -255,3 +314,167 @@ tanstack-query/
 "TanStack Query로 데이터 페칭 훅을 만들어줘"
 "useSuspenseQuery + Prefetch 패턴으로 SSR 페이지를 구현해줘"
 ```
+
+## 🚀 외부 스킬, 플러그인
+
+### Vercel Labs
+
+| 스킬                    | 설명                                                    | 링크                                                                  |
+| ----------------------- | ------------------------------------------------------- | --------------------------------------------------------------------- |
+| web-design-guidelines   | 웹 인터페이스 가이드라인 준수 여부를 검토하는 UI 리뷰어 | [GitHub](https://github.com/vercel-labs/web-design-guidelines)        |
+| react-best-practices    | 에이전트/LLM 최적화된 React 베스트 프랙티스 저장소      | [GitHub](https://github.com/vercel-labs/react-best-practices)         |
+| composition-patterns    | 확장성 높은 React 컴포지션 패턴 (합성 컴포넌트 등)      | [GitHub](https://github.com/vercel-labs/react-composition-patterns)   |
+
+---
+
+### oh-my-claudecode
+
+고급 워크플로우 자동화 및 에이전트 오케스트레이션 플러그인입니다.
+
+#### 🔧 설정 & 진단
+
+| 명령어                    | 설명                                             |
+| ------------------------- | ------------------------------------------------ |
+| `/omc-setup`              | oh-my-claudecode 초기 설정 (필수)                |
+| `/doctor`                 | 설치 문제 진단 및 수정                           |
+| `/hud`                    | HUD 디스플레이 옵션 설정                         |
+| `/mcp-setup`              | MCP 서버 설정                                    |
+
+#### 🚀 자율 실행 모드
+
+| 명령어                    | 설명                                             |
+| ------------------------- | ------------------------------------------------ |
+| `/autopilot`              | 아이디어 → 완성 코드까지 자율 실행               |
+| `/ultrapilot`             | 파일 소유권 분할 병렬 autopilot (최대 5배 빠름)  |
+| `/ultrawork`              | 고처리량 병렬 에이전트 오케스트레이션            |
+| `/ralph`                  | 아키텍트 검증이 포함된 자기 참조 루프            |
+| `/deep-executor`          | 복잡한 목표 지향 작업용 딥 실행기                |
+
+#### 📋 계획 & 분석
+
+| 명령어                    | 설명                                             |
+| ------------------------- | ------------------------------------------------ |
+| `/plan`                   | 인터뷰 워크플로우 기반 전략적 계획               |
+| `/ralplan`                | Planner + Architect + Critic 합의까지 반복 계획  |
+| `/analyze`                | 심층 분석 및 조사                                |
+| `/deepsearch`             | 철저한 코드베이스 검색                           |
+
+#### 🔍 코드 품질
+
+| 명령어                    | 설명                                             |
+| ------------------------- | ------------------------------------------------ |
+| `/code-review`            | 종합 코드 리뷰                                   |
+| `/security-review`        | 보안 취약점 탐지 및 수정                         |
+| `/build-fix`              | 빌드/TypeScript 오류 최소 변경으로 수정          |
+| `/tdd`                    | 테스트 주도 개발 워크플로우                      |
+| `/ultraqa`                | QA 사이클 (테스트 → 검증 → 수정 → 반복)          |
+
+#### 🤖 에이전트 관리
+
+| 명령어                    | 설명                                             |
+| ------------------------- | ------------------------------------------------ |
+| `/swarm`                  | SQLite 기반 원자적 클레임으로 N개 에이전트 협업  |
+| `/ecomode`                | Haiku/Sonnet 에이전트로 토큰 효율 실행           |
+| `/pipeline`               | 에이전트 순차/분기 체이닝                        |
+| `/cancel`                 | 활성 모드 취소 (autopilot, ralph, swarm 등)      |
+
+#### 📝 유틸리티
+
+| 명령어                    | 설명                                             |
+| ------------------------- | ------------------------------------------------ |
+| `/git-master`             | Git 전문가 (원자적 커밋, 리베이스, 히스토리)     |
+| `/note`                   | notepad.md에 노트 저장 (컴팩션 복원력)           |
+| `/learner`                | 현재 대화에서 학습된 스킬 추출                   |
+| `/frontend-ui-ux`         | 디자인 목업 없이도 멋진 UI/UX 제작               |
+
+---
+
+### superpowers
+
+체계적인 개발 워크플로우를 강제하는 프로세스 스킬 모음입니다.
+
+#### 🎯 필수 워크플로우
+
+| 명령어                              | 설명                                             |
+| ----------------------------------- | ------------------------------------------------ |
+| `/using-superpowers`                | 대화 시작 시 스킬 사용 규칙 활성화 (필수)        |
+| `/brainstorming`                    | 창작 작업 전 필수 브레인스토밍                   |
+| `/systematic-debugging`             | 버그/테스트 실패 시 체계적 디버깅                |
+| `/test-driven-development`          | 구현 전 테스트 먼저 작성 (TDD)                   |
+| `/verification-before-completion`   | 완료 선언 전 검증 체크리스트                     |
+
+#### 📝 계획 & 실행
+
+| 명령어                              | 설명                                             |
+| ----------------------------------- | ------------------------------------------------ |
+| `/writing-plans`                    | 멀티 스텝 작업 전 계획 문서 작성                 |
+| `/executing-plans`                  | 작성된 계획을 별도 세션에서 실행                 |
+| `/subagent-driven-development`      | 독립 작업을 서브에이전트로 분산 실행             |
+| `/dispatching-parallel-agents`      | 2개 이상 독립 작업 병렬 에이전트 실행            |
+
+#### 🔄 Git & 코드 리뷰
+
+| 명령어                              | 설명                                             |
+| ----------------------------------- | ------------------------------------------------ |
+| `/using-git-worktrees`              | 피처 격리를 위한 Git worktree 사용               |
+| `/finishing-a-development-branch`   | 구현 완료 후 브랜치 마무리 결정                  |
+| `/requesting-code-review`           | 작업 완료/주요 피처 후 코드 리뷰 요청            |
+| `/receiving-code-review`            | 코드 리뷰 피드백 수신 및 반영                    |
+
+#### ✍️ 스킬 관리
+
+| 명령어                              | 설명                                             |
+| ----------------------------------- | ------------------------------------------------ |
+| `/writing-skills`                   | 새 스킬 생성/편집/검증                           |
+
+---
+
+### example-skills (Anthropic 공식)
+
+Anthropic에서 제공하는 예제 스킬 모음입니다.
+
+#### 📄 문서 & 프레젠테이션
+
+| 명령어                    | 설명                                             |
+| ------------------------- | ------------------------------------------------ |
+| `/docx`                   | Word 문서 생성/편집/분석 (트랙 변경 지원)        |
+| `/pdf`                    | PDF 텍스트/테이블 추출, 병합, 생성               |
+| `/pptx`                   | 프레젠테이션 생성/편집/분석                      |
+| `/xlsx`                   | 스프레드시트 생성/편집/분석 (수식 지원)          |
+| `/doc-coauthoring`        | 문서 공동 작성 워크플로우 가이드                 |
+
+#### 🎨 디자인 & 미디어
+
+| 명령어                    | 설명                                             |
+| ------------------------- | ------------------------------------------------ |
+| `/frontend-design`        | 프로덕션급 프론트엔드 인터페이스 제작            |
+| `/canvas-design`          | p5.js 기반 시각 아트 (png/pdf)                   |
+| `/algorithmic-art`        | 시드 랜덤 기반 알고리즘 아트                     |
+| `/slack-gif-creator`      | Slack 최적화 애니메이션 GIF 제작                 |
+| `/brand-guidelines`       | Anthropic 공식 브랜드 컬러/타이포 적용           |
+| `/theme-factory`          | 아티팩트 테마 스타일링 툴킷                      |
+
+#### 🛠️ 개발 도구
+
+| 명령어                    | 설명                                             |
+| ------------------------- | ------------------------------------------------ |
+| `/mcp-builder`            | 고품질 MCP 서버 제작 가이드                      |
+| `/skill-creator`          | 효과적인 스킬 생성 가이드                        |
+| `/web-artifacts-builder`  | 멀티 컴포넌트 HTML 아티팩트 제작                 |
+| `/webapp-testing`         | Playwright 기반 로컬 웹앱 테스트                 |
+| `/internal-comms`         | 내부 커뮤니케이션 작성 도구                      |
+
+---
+
+### 기타 플러그인
+
+| 플러그인                  | 명령어                 | 설명                                   |
+| ------------------------- | ---------------------- | -------------------------------------- |
+| feature-dev               | `/feature-dev`         | 코드베이스 이해 기반 피처 개발 가이드  |
+| code-review               | `/code-review`         | PR 코드 리뷰                           |
+| code-quality-plugin       | `/code-quality-reviewer` | DRY, KISS 원칙 기반 코드 품질 리뷰   |
+| code-style-plugin         | `/code-style-reviewer` | SRP 등 코드 스타일 원칙 리뷰           |
+| session-reporter-plugin   | `/session-reporter`    | 작업 세션 HTML 리포트 생성             |
+| ralph-loop                | `/ralph-loop`          | 현재 세션에서 Ralph Loop 시작          |
+| claude-mem                | `/make-plan`, `/do`    | 문서 발견 + 계획 생성 / 서브에이전트 실행 |
+| Notion                    | `/Notion:*`            | Notion 워크스페이스 연동 (검색, 생성 등) |
