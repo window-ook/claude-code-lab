@@ -23,6 +23,9 @@ npx claude-code-lab install nextjs-16
 npx claude-code-lab install prd
 npx claude-code-lab install idea-plan
 npx claude-code-lab install code-flow-report
+npx claude-code-lab install clean-tailwind
+npx claude-code-lab install playwright-pom
+npx claude-code-lab install tanstack-query
 ```
 
 ### 모든 스킬 설치
@@ -33,12 +36,15 @@ npx claude-code-lab install --all
 
 ## 🪄 설치 가능한 스킬
 
-| 스킬               | 설명                              |
-| ------------------ | --------------------------------- |
-| `nextjs-16`        | Next.js 16 App Router 개발 가이드 |
-| `prd`              | 제품 요구사항 정의서(PRD) 작성    |
-| `idea-plan`        | 아이디어 기획서 작성              |
-| `code-flow-report` | 코드 플로우 시각화 리포트 생성    |
+| 스킬               | 설명                                    |
+| ------------------ | --------------------------------------- |
+| `clean-tailwind`   | Tailwind CSS 클래스 순서 정렬 스킬      |
+| `code-flow-report` | 코드 플로우 시각화 리포트 생성          |
+| `idea-plan`        | 아이디어 기획서 작성                    |
+| `nextjs-16`        | Next.js 16 App Router 개발 가이드       |
+| `playwright-pom`   | Playwright E2E 테스트 POM 패턴 가이드   |
+| `prd`              | 제품 요구사항 정의서(PRD) 작성          |
+| `tanstack-query`   | TanStack Query v5 베스트 프랙티스 가이드 |
 
 ## 📍 설치 위치
 
