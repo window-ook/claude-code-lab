@@ -4,16 +4,17 @@
 
 ## 📚 스킬 목록
 
-| 스킬                                  | 설명                                  | 활성화 명령어       |
-| ------------------------------------- | ------------------------------------- | ------------------- |
-| [code-flow-report](#code-flow-report) | 코드 플로우 시각화 리포트 생성        | `/code-flow-report` |
-| [idea-plan](#idea-plan)               | 아이디어 기획서 작성                  | `/idea-plan`        |
-| [prd](#prd)                           | 제품 요구사항 정의서(PRD) 작성        | `/prd`              |
-| [clean-tailwind](#clean-tailwind)     | Tailwind 프로퍼티를 순서에 따라 정렬  | `/clean-tailwind`   |
-| [playwright-pom](#playwright-pom)     | Playwright E2E 테스트 POM 패턴 가이드 | `/playwright-pom`   |
-| [nextjs-16](#nextjs-16)               | Next.js 16 공식 문서 컨텍스트         | `/nextjs-16`        |
-| [tailwind-css](#tailwind-css)         | Tailwind CSS 공식 문서 컨텍스트       | `/tailwind-css`     |
-| [tanstack-query](#tanstack-query)     | TanStack Query 공식 문서 컨텍스트     | `/tanstack-query`   |
+| 스킬                                  | 설명                                   | 활성화 명령어       |
+| ------------------------------------- | -------------------------------------- | ------------------- |
+| [code-flow-report](#code-flow-report) | 코드 플로우 시각화 리포트 생성         | `/code-flow-report` |
+| [idea-plan](#idea-plan)               | 아이디어 기획서 작성                   | `/idea-plan`        |
+| [prd](#prd)                           | 제품 요구사항 정의서(PRD) 작성         | `/prd`              |
+| [clean-tailwind](#clean-tailwind)     | Tailwind CSS className 순서 정렬       | `/clean-tailwind`   |
+| [playwright-pom](#playwright-pom)     | Playwright E2E 테스트 POM 패턴         | `/playwright-pom`   |
+| [nextjs-16](#nextjs-16)               | Next.js 16 공식 문서 기반 컨텍스트     | `/nextjs-16`        |
+| [tailwind-css](#tailwind-css)         | Tailwind CSS 공식 문서 기반 컨텍스트   | `/tailwind-css`     |
+| [emotion-js](#emotion-js)             | Emotion.js 공식 문서 기반 컨텍스트     | `/emotion-js`       |
+| [tanstack-query](#tanstack-query)     | TanStack Query 공식 문서 기반 컨텍스트 | `/tanstack-query`   |
 
 ## 🪄 code-flow-report
 
@@ -235,6 +236,66 @@ tailwind-css/
 "다크 모드를 지원하는 버튼 스타일을 작성해줘"
 ```
 
+## 🪄 emotion-js
+
+**[🧙🏻‍♂️ 에이전트가 자율적 실행 가능]**
+
+Emotion.js v11 기반 **CSS-in-JS 베스트 프랙티스 및 공식 문서 레퍼런스 가이드**입니다. styled 컴포넌트, Object Styles, Theming, SSR 등 핵심 패턴을 제공합니다.
+
+### 주요 내용
+
+- **TypeScript + Object Styles**: CSS 문자열 대신 Object Styles로 타입 안전성 확보
+- **정적/동적 분리**: `css` prop은 정적 스타일, `style` prop은 동적 스타일
+- **스타일 외부 정의**: 컴포넌트 함수 외부에 정의하여 재직렬화 방지
+- **Theming**: `ThemeProvider`, `useTheme` Hook, TypeScript 테마 타이핑
+- **SSR**: Default vs Advanced 방식, Next.js/Gatsby 통합
+- **Performance**: 프로파일링 우선, Babel 플러그인 활용
+
+### 스킬 구조
+
+```
+emotion-js/
+├── SKILL.md              # Critical Rules, 활성화 조건, 레퍼런스 라우팅
+└── references/
+    ├── core-concepts/    # 핵심 스타일링 패턴 (5개)
+    └── advanced/         # 고급 기능 및 최적화 (10개)
+```
+
+### 레퍼런스 문서 목록
+
+**Core Concepts (5)**
+
+| 번호 | 주제              | 설명                                         |
+| ---- | ----------------- | -------------------------------------------- |
+| 01   | Styled Components | `styled` API, props 동적 스타일링, `as` prop |
+| 02   | Composition       | 스타일 합성, 배열 기반 병합                  |
+| 03   | Object Styles     | Object Styles 문법, 숫자 값, Fallbacks       |
+| 04   | Nested Selectors  | 중첩 셀렉터, `&` Ampersand 셀렉터            |
+| 05   | Media Queries     | 미디어 쿼리, breakpoints, Facepaint          |
+
+**Advanced (10)**
+
+| 번호 | 주제                | 설명                                               |
+| ---- | ------------------- | -------------------------------------------------- |
+| 01   | Best Practices      | TypeScript, 코로케이션, 정적/동적 분리, 테마 전략  |
+| 02   | Keyframes           | `keyframes` 헬퍼, 애니메이션 정의                  |
+| 03   | SSR                 | Default vs Advanced SSR, Next.js 통합              |
+| 04   | Attaching Props     | props 전달 패턴, 동적 스타일링 연동                |
+| 05   | Theming             | ThemeProvider, useTheme, 중첩 테마 병합            |
+| 06   | Labels              | 커스텀 라벨로 디버깅 편의성 향상                   |
+| 07   | Class Names         | ClassNames render prop, 서드파티 컴포넌트 스타일링 |
+| 08   | CacheProvider       | createCache, 커스텀 key/nonce/prepend 설정         |
+| 09   | Performance         | 프로파일링 우선, 리렌더링 최소화, Babel 플러그인   |
+| 10   | For Library Authors | peer dependencies, 번들 사이즈, 라이브러리 설계    |
+
+### 사용 예시
+
+```
+"/emotion-js"
+"Emotion styled 컴포넌트로 버튼을 만들어줘"
+"ThemeProvider로 다크모드를 구현해줘"
+```
+
 ## 🪄 tanstack-query
 
 **[🧙🏻‍♂️ 에이전트가 자율적 실행 가능]**
@@ -319,11 +380,11 @@ tanstack-query/
 
 ### Vercel Labs
 
-| 스킬                    | 설명                                                    | 링크                                                                  |
-| ----------------------- | ------------------------------------------------------- | --------------------------------------------------------------------- |
-| web-design-guidelines   | 웹 인터페이스 가이드라인 준수 여부를 검토하는 UI 리뷰어 | [GitHub](https://github.com/vercel-labs/web-design-guidelines)        |
-| react-best-practices    | 에이전트/LLM 최적화된 React 베스트 프랙티스 저장소      | [GitHub](https://github.com/vercel-labs/react-best-practices)         |
-| composition-patterns    | 확장성 높은 React 컴포지션 패턴 (합성 컴포넌트 등)      | [GitHub](https://github.com/vercel-labs/react-composition-patterns)   |
+| 스킬                  | 설명                                                    | 링크                                                                |
+| --------------------- | ------------------------------------------------------- | ------------------------------------------------------------------- |
+| web-design-guidelines | 웹 인터페이스 가이드라인 준수 여부를 검토하는 UI 리뷰어 | [GitHub](https://github.com/vercel-labs/web-design-guidelines)      |
+| react-best-practices  | 에이전트/LLM 최적화된 React 베스트 프랙티스 저장소      | [GitHub](https://github.com/vercel-labs/react-best-practices)       |
+| composition-patterns  | 확장성 높은 React 컴포지션 패턴 (합성 컴포넌트 등)      | [GitHub](https://github.com/vercel-labs/react-composition-patterns) |
 
 ---
 
@@ -333,59 +394,59 @@ tanstack-query/
 
 #### 🔧 설정 & 진단
 
-| 명령어                    | 설명                                             |
-| ------------------------- | ------------------------------------------------ |
-| `/omc-setup`              | oh-my-claudecode 초기 설정 (필수)                |
-| `/doctor`                 | 설치 문제 진단 및 수정                           |
-| `/hud`                    | HUD 디스플레이 옵션 설정                         |
-| `/mcp-setup`              | MCP 서버 설정                                    |
+| 명령어       | 설명                              |
+| ------------ | --------------------------------- |
+| `/omc-setup` | oh-my-claudecode 초기 설정 (필수) |
+| `/doctor`    | 설치 문제 진단 및 수정            |
+| `/hud`       | HUD 디스플레이 옵션 설정          |
+| `/mcp-setup` | MCP 서버 설정                     |
 
 #### 🚀 자율 실행 모드
 
-| 명령어                    | 설명                                             |
-| ------------------------- | ------------------------------------------------ |
-| `/autopilot`              | 아이디어 → 완성 코드까지 자율 실행               |
-| `/ultrapilot`             | 파일 소유권 분할 병렬 autopilot (최대 5배 빠름)  |
-| `/ultrawork`              | 고처리량 병렬 에이전트 오케스트레이션            |
-| `/ralph`                  | 아키텍트 검증이 포함된 자기 참조 루프            |
-| `/deep-executor`          | 복잡한 목표 지향 작업용 딥 실행기                |
+| 명령어           | 설명                                            |
+| ---------------- | ----------------------------------------------- |
+| `/autopilot`     | 아이디어 → 완성 코드까지 자율 실행              |
+| `/ultrapilot`    | 파일 소유권 분할 병렬 autopilot (최대 5배 빠름) |
+| `/ultrawork`     | 고처리량 병렬 에이전트 오케스트레이션           |
+| `/ralph`         | 아키텍트 검증이 포함된 자기 참조 루프           |
+| `/deep-executor` | 복잡한 목표 지향 작업용 딥 실행기               |
 
 #### 📋 계획 & 분석
 
-| 명령어                    | 설명                                             |
-| ------------------------- | ------------------------------------------------ |
-| `/plan`                   | 인터뷰 워크플로우 기반 전략적 계획               |
-| `/ralplan`                | Planner + Architect + Critic 합의까지 반복 계획  |
-| `/analyze`                | 심층 분석 및 조사                                |
-| `/deepsearch`             | 철저한 코드베이스 검색                           |
+| 명령어        | 설명                                            |
+| ------------- | ----------------------------------------------- |
+| `/plan`       | 인터뷰 워크플로우 기반 전략적 계획              |
+| `/ralplan`    | Planner + Architect + Critic 합의까지 반복 계획 |
+| `/analyze`    | 심층 분석 및 조사                               |
+| `/deepsearch` | 철저한 코드베이스 검색                          |
 
 #### 🔍 코드 품질
 
-| 명령어                    | 설명                                             |
-| ------------------------- | ------------------------------------------------ |
-| `/code-review`            | 종합 코드 리뷰                                   |
-| `/security-review`        | 보안 취약점 탐지 및 수정                         |
-| `/build-fix`              | 빌드/TypeScript 오류 최소 변경으로 수정          |
-| `/tdd`                    | 테스트 주도 개발 워크플로우                      |
-| `/ultraqa`                | QA 사이클 (테스트 → 검증 → 수정 → 반복)          |
+| 명령어             | 설명                                    |
+| ------------------ | --------------------------------------- |
+| `/code-review`     | 종합 코드 리뷰                          |
+| `/security-review` | 보안 취약점 탐지 및 수정                |
+| `/build-fix`       | 빌드/TypeScript 오류 최소 변경으로 수정 |
+| `/tdd`             | 테스트 주도 개발 워크플로우             |
+| `/ultraqa`         | QA 사이클 (테스트 → 검증 → 수정 → 반복) |
 
 #### 🤖 에이전트 관리
 
-| 명령어                    | 설명                                             |
-| ------------------------- | ------------------------------------------------ |
-| `/swarm`                  | SQLite 기반 원자적 클레임으로 N개 에이전트 협업  |
-| `/ecomode`                | Haiku/Sonnet 에이전트로 토큰 효율 실행           |
-| `/pipeline`               | 에이전트 순차/분기 체이닝                        |
-| `/cancel`                 | 활성 모드 취소 (autopilot, ralph, swarm 등)      |
+| 명령어      | 설명                                            |
+| ----------- | ----------------------------------------------- |
+| `/swarm`    | SQLite 기반 원자적 클레임으로 N개 에이전트 협업 |
+| `/ecomode`  | Haiku/Sonnet 에이전트로 토큰 효율 실행          |
+| `/pipeline` | 에이전트 순차/분기 체이닝                       |
+| `/cancel`   | 활성 모드 취소 (autopilot, ralph, swarm 등)     |
 
 #### 📝 유틸리티
 
-| 명령어                    | 설명                                             |
-| ------------------------- | ------------------------------------------------ |
-| `/git-master`             | Git 전문가 (원자적 커밋, 리베이스, 히스토리)     |
-| `/note`                   | notepad.md에 노트 저장 (컴팩션 복원력)           |
-| `/learner`                | 현재 대화에서 학습된 스킬 추출                   |
-| `/frontend-ui-ux`         | 디자인 목업 없이도 멋진 UI/UX 제작               |
+| 명령어            | 설명                                         |
+| ----------------- | -------------------------------------------- |
+| `/git-master`     | Git 전문가 (원자적 커밋, 리베이스, 히스토리) |
+| `/note`           | notepad.md에 노트 저장 (컴팩션 복원력)       |
+| `/learner`        | 현재 대화에서 학습된 스킬 추출               |
+| `/frontend-ui-ux` | 디자인 목업 없이도 멋진 UI/UX 제작           |
 
 ---
 
@@ -395,37 +456,37 @@ tanstack-query/
 
 #### 🎯 필수 워크플로우
 
-| 명령어                              | 설명                                             |
-| ----------------------------------- | ------------------------------------------------ |
-| `/using-superpowers`                | 대화 시작 시 스킬 사용 규칙 활성화 (필수)        |
-| `/brainstorming`                    | 창작 작업 전 필수 브레인스토밍                   |
-| `/systematic-debugging`             | 버그/테스트 실패 시 체계적 디버깅                |
-| `/test-driven-development`          | 구현 전 테스트 먼저 작성 (TDD)                   |
-| `/verification-before-completion`   | 완료 선언 전 검증 체크리스트                     |
+| 명령어                            | 설명                                      |
+| --------------------------------- | ----------------------------------------- |
+| `/using-superpowers`              | 대화 시작 시 스킬 사용 규칙 활성화 (필수) |
+| `/brainstorming`                  | 창작 작업 전 필수 브레인스토밍            |
+| `/systematic-debugging`           | 버그/테스트 실패 시 체계적 디버깅         |
+| `/test-driven-development`        | 구현 전 테스트 먼저 작성 (TDD)            |
+| `/verification-before-completion` | 완료 선언 전 검증 체크리스트              |
 
 #### 📝 계획 & 실행
 
-| 명령어                              | 설명                                             |
-| ----------------------------------- | ------------------------------------------------ |
-| `/writing-plans`                    | 멀티 스텝 작업 전 계획 문서 작성                 |
-| `/executing-plans`                  | 작성된 계획을 별도 세션에서 실행                 |
-| `/subagent-driven-development`      | 독립 작업을 서브에이전트로 분산 실행             |
-| `/dispatching-parallel-agents`      | 2개 이상 독립 작업 병렬 에이전트 실행            |
+| 명령어                         | 설명                                  |
+| ------------------------------ | ------------------------------------- |
+| `/writing-plans`               | 멀티 스텝 작업 전 계획 문서 작성      |
+| `/executing-plans`             | 작성된 계획을 별도 세션에서 실행      |
+| `/subagent-driven-development` | 독립 작업을 서브에이전트로 분산 실행  |
+| `/dispatching-parallel-agents` | 2개 이상 독립 작업 병렬 에이전트 실행 |
 
 #### 🔄 Git & 코드 리뷰
 
-| 명령어                              | 설명                                             |
-| ----------------------------------- | ------------------------------------------------ |
-| `/using-git-worktrees`              | 피처 격리를 위한 Git worktree 사용               |
-| `/finishing-a-development-branch`   | 구현 완료 후 브랜치 마무리 결정                  |
-| `/requesting-code-review`           | 작업 완료/주요 피처 후 코드 리뷰 요청            |
-| `/receiving-code-review`            | 코드 리뷰 피드백 수신 및 반영                    |
+| 명령어                            | 설명                                  |
+| --------------------------------- | ------------------------------------- |
+| `/using-git-worktrees`            | 피처 격리를 위한 Git worktree 사용    |
+| `/finishing-a-development-branch` | 구현 완료 후 브랜치 마무리 결정       |
+| `/requesting-code-review`         | 작업 완료/주요 피처 후 코드 리뷰 요청 |
+| `/receiving-code-review`          | 코드 리뷰 피드백 수신 및 반영         |
 
 #### ✍️ 스킬 관리
 
-| 명령어                              | 설명                                             |
-| ----------------------------------- | ------------------------------------------------ |
-| `/writing-skills`                   | 새 스킬 생성/편집/검증                           |
+| 명령어            | 설명                   |
+| ----------------- | ---------------------- |
+| `/writing-skills` | 새 스킬 생성/편집/검증 |
 
 ---
 
@@ -435,46 +496,46 @@ Anthropic에서 제공하는 예제 스킬 모음입니다.
 
 #### 📄 문서 & 프레젠테이션
 
-| 명령어                    | 설명                                             |
-| ------------------------- | ------------------------------------------------ |
-| `/docx`                   | Word 문서 생성/편집/분석 (트랙 변경 지원)        |
-| `/pdf`                    | PDF 텍스트/테이블 추출, 병합, 생성               |
-| `/pptx`                   | 프레젠테이션 생성/편집/분석                      |
-| `/xlsx`                   | 스프레드시트 생성/편집/분석 (수식 지원)          |
-| `/doc-coauthoring`        | 문서 공동 작성 워크플로우 가이드                 |
+| 명령어             | 설명                                      |
+| ------------------ | ----------------------------------------- |
+| `/docx`            | Word 문서 생성/편집/분석 (트랙 변경 지원) |
+| `/pdf`             | PDF 텍스트/테이블 추출, 병합, 생성        |
+| `/pptx`            | 프레젠테이션 생성/편집/분석               |
+| `/xlsx`            | 스프레드시트 생성/편집/분석 (수식 지원)   |
+| `/doc-coauthoring` | 문서 공동 작성 워크플로우 가이드          |
 
 #### 🎨 디자인 & 미디어
 
-| 명령어                    | 설명                                             |
-| ------------------------- | ------------------------------------------------ |
-| `/frontend-design`        | 프로덕션급 프론트엔드 인터페이스 제작            |
-| `/canvas-design`          | p5.js 기반 시각 아트 (png/pdf)                   |
-| `/algorithmic-art`        | 시드 랜덤 기반 알고리즘 아트                     |
-| `/slack-gif-creator`      | Slack 최적화 애니메이션 GIF 제작                 |
-| `/brand-guidelines`       | Anthropic 공식 브랜드 컬러/타이포 적용           |
-| `/theme-factory`          | 아티팩트 테마 스타일링 툴킷                      |
+| 명령어               | 설명                                   |
+| -------------------- | -------------------------------------- |
+| `/frontend-design`   | 프로덕션급 프론트엔드 인터페이스 제작  |
+| `/canvas-design`     | p5.js 기반 시각 아트 (png/pdf)         |
+| `/algorithmic-art`   | 시드 랜덤 기반 알고리즘 아트           |
+| `/slack-gif-creator` | Slack 최적화 애니메이션 GIF 제작       |
+| `/brand-guidelines`  | Anthropic 공식 브랜드 컬러/타이포 적용 |
+| `/theme-factory`     | 아티팩트 테마 스타일링 툴킷            |
 
 #### 🛠️ 개발 도구
 
-| 명령어                    | 설명                                             |
-| ------------------------- | ------------------------------------------------ |
-| `/mcp-builder`            | 고품질 MCP 서버 제작 가이드                      |
-| `/skill-creator`          | 효과적인 스킬 생성 가이드                        |
-| `/web-artifacts-builder`  | 멀티 컴포넌트 HTML 아티팩트 제작                 |
-| `/webapp-testing`         | Playwright 기반 로컬 웹앱 테스트                 |
-| `/internal-comms`         | 내부 커뮤니케이션 작성 도구                      |
+| 명령어                   | 설명                             |
+| ------------------------ | -------------------------------- |
+| `/mcp-builder`           | 고품질 MCP 서버 제작 가이드      |
+| `/skill-creator`         | 효과적인 스킬 생성 가이드        |
+| `/web-artifacts-builder` | 멀티 컴포넌트 HTML 아티팩트 제작 |
+| `/webapp-testing`        | Playwright 기반 로컬 웹앱 테스트 |
+| `/internal-comms`        | 내부 커뮤니케이션 작성 도구      |
 
 ---
 
 ### 기타 플러그인
 
-| 플러그인                  | 명령어                 | 설명                                   |
-| ------------------------- | ---------------------- | -------------------------------------- |
-| feature-dev               | `/feature-dev`         | 코드베이스 이해 기반 피처 개발 가이드  |
-| code-review               | `/code-review`         | PR 코드 리뷰                           |
-| code-quality-plugin       | `/code-quality-reviewer` | DRY, KISS 원칙 기반 코드 품질 리뷰   |
-| code-style-plugin         | `/code-style-reviewer` | SRP 등 코드 스타일 원칙 리뷰           |
-| session-reporter-plugin   | `/session-reporter`    | 작업 세션 HTML 리포트 생성             |
-| ralph-loop                | `/ralph-loop`          | 현재 세션에서 Ralph Loop 시작          |
-| claude-mem                | `/make-plan`, `/do`    | 문서 발견 + 계획 생성 / 서브에이전트 실행 |
-| Notion                    | `/Notion:*`            | Notion 워크스페이스 연동 (검색, 생성 등) |
+| 플러그인                | 명령어                   | 설명                                      |
+| ----------------------- | ------------------------ | ----------------------------------------- |
+| feature-dev             | `/feature-dev`           | 코드베이스 이해 기반 피처 개발 가이드     |
+| code-review             | `/code-review`           | PR 코드 리뷰                              |
+| code-quality-plugin     | `/code-quality-reviewer` | DRY, KISS 원칙 기반 코드 품질 리뷰        |
+| code-style-plugin       | `/code-style-reviewer`   | SRP 등 코드 스타일 원칙 리뷰              |
+| session-reporter-plugin | `/session-reporter`      | 작업 세션 HTML 리포트 생성                |
+| ralph-loop              | `/ralph-loop`            | 현재 세션에서 Ralph Loop 시작             |
+| claude-mem              | `/make-plan`, `/do`      | 문서 발견 + 계획 생성 / 서브에이전트 실행 |
+| Notion                  | `/Notion:*`              | Notion 워크스페이스 연동 (검색, 생성 등)  |
