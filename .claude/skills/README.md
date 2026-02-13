@@ -15,6 +15,7 @@
 | [tailwind-css](#tailwind-css)         | Tailwind CSS 공식 문서 기반 컨텍스트   | `/tailwind-css`     |
 | [emotion-js](#emotion-js)             | Emotion.js 공식 문서 기반 컨텍스트     | `/emotion-js`       |
 | [tanstack-query](#tanstack-query)     | TanStack Query 공식 문서 기반 컨텍스트 | `/tanstack-query`   |
+| [fsd](#fsd)                           | Feature-Sliced Design 아키텍처 가이드  | `/fsd`              |
 
 ## 🪄 code-flow-report
 
@@ -374,6 +375,74 @@ tanstack-query/
 "/tanstack-query"
 "TanStack Query로 데이터 페칭 훅을 만들어줘"
 "useSuspenseQuery + Prefetch 패턴으로 SSR 페이지를 구현해줘"
+```
+
+## 🪄 fsd
+
+**[🧙🏻‍♂️ 에이전트가 자율적 실행 가능]**
+
+Feature-Sliced Design(FSD) 아키텍처 방법론에 따른 **프론트엔드 디렉토리 구조 설계 가이드**입니다. 레이어 간 의존성 규칙, Public API 패턴, 도메인 기반 코드 조직을 제공합니다.
+
+### 주요 내용
+
+- **Layer 구조**: app → pages → widgets → features → entities → shared (단방향 의존성)
+- **슬라이스 격리**: 같은 Layer 내 슬라이스 간 상호 참조 금지
+- **Public API**: 모든 슬라이스는 `index.ts` re-export를 통해서만 외부에 노출
+- **도메인 네이밍**: `components/`, `hooks/`, `types/` 금지. 목적 기반 이름 사용
+- **Segment 종류**: `ui`, `api`, `model`, `lib`, `config`
+- **Cross-Import**: Entity Layer에서만 `@x` 패턴 허용
+
+### 스킬 구조
+
+```
+fsd/
+├── SKILL.md              # Critical Rules, 활성화 조건, 워크플로우
+└── references/
+    ├── 01-overview.md              # Layer → Slice → Segment 3단계 계층
+    ├── 02-authentication.md        # 인증 플로우, token 관리
+    ├── 03-types.md                 # DTO/Mapper, 타입 배치 전략
+    ├── 04-page-layouts.md          # Render Props/Slots 패턴
+    ├── 05-handling-api-requests.md # shared/api 구성, client.ts 패턴
+    ├── 06-desegmentation.md        # 탈세그먼트화 안티패턴
+    ├── 07-excessive-entities.md    # Entities 비대화 방지
+    ├── 08-layers.md                # 각 Layer 상세 규칙
+    ├── 09-slices-segments.md       # 슬라이스/세그먼트 설계
+    └── 10-public-api.md            # re-export, 순환 참조 방지
+```
+
+### 레퍼런스 문서 목록
+
+**Core Concepts**
+
+| 번호 | 주제                   | 설명                                          |
+| ---- | ---------------------- | --------------------------------------------- |
+| 01   | Overview               | Layer → Slice → Segment 3단계 계층, 점진적 도입 |
+| 08   | Layers                 | Shared ~ App 각 Layer 상세 역할 및 Import 규칙 |
+| 09   | Slices & Segments      | 슬라이스 네이밍, 그룹화, 표준/커스텀 세그먼트  |
+| 10   | Public API             | re-export 패턴, `@x` cross-import, tree-shaking |
+
+**Practical Guides**
+
+| 번호 | 주제                   | 설명                                          |
+| ---- | ---------------------- | --------------------------------------------- |
+| 02   | Authentication         | 인증 플로우, token 관리, 로그아웃 패턴         |
+| 03   | Types                  | DTO/Mapper, cross-import, Zod 스키마 위치      |
+| 04   | Page Layouts           | Render Props/Slots 패턴, App Layer 이동        |
+| 05   | Handling API Requests  | shared/api 구성, 슬라이스별 API, client.ts     |
+
+**Common Issues**
+
+| 번호 | 주제                   | 설명                                          |
+| ---- | ---------------------- | --------------------------------------------- |
+| 06   | Desegmentation         | 탈세그먼트화 문제, 도메인별 응집 방법           |
+| 07   | Excessive Entities     | entities 없이 시작, 점진적 추출, CRUD 배치     |
+
+### 사용 예시
+
+```
+"/fsd"
+"FSD 구조로 프로젝트 디렉토리를 설계해줘"
+"이 컴포넌트를 FSD 레이어에 맞게 리팩토링해줘"
 ```
 
 ## 🚀 외부 스킬, 플러그인
